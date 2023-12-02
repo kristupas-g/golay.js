@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golay Code Demo</title>
+    <script src="./binaryMatrix.js"></script>
+    <script src="./constants.js"></script>
+    <script src="./golayCode.js"></script>
+    <script src="./utils.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./handleImage.js"></script>
+    <script src="./handleText.js"></script>
+    <script src="./test.js"></script>
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure this is the correct path to your CSS file -->
+</head>
+<body>
+
+<div class="container">
+    <h2>Golay code implementation</h2>
+
+    <table class="table">
+        <tr>
+            <td colspan="2">
+                <button id="randomVector" class="button">Random Input</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Vector to be Encoded</td>
+            <td>
+                <input type="text" placeholder="Input vector here" id="inputVector" class="table-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="encodeButton" class="button">Encode</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Encoded Vector</td>
+            <td>
+                <input type="text" placeholder="Encoded vector will appear here" id="encodedVector" class="table-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="addNoiseButton" class="button">Add Noise & Transmit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Error chance</td>
+            <td>
+                <input type="text" placeholder="Enter error percentage" id="errorPercentage" class="table-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Corrupted Bit Count</td>
+            <td>
+                <span id="curruptedBits"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Error Positions</td>
+            <td>
+                <span id="errorPositions"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span id="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Transmitted Vector</td>
+            <td>
+                <input type="text" placeholder="Transmitted vector will appear here" id="transmittedVector" class="table-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="decodeButton" class="button">Decode</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Decoded Vector</td>
+            <td>
+                <input type="text" placeholder="Decoded vector will appear here" id="decodedVector" class="table-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td>
+                <input type="text" placeholder="Final result will appear here" readonly id="finalResult" class="table-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="log"></div>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Image encoding/decoding</h2>
+    <table class="table">
+        <tr>
+            <td>Upload File</td>
+            <td>
+                <div class="file-input-wrapper">
+                    <span>Browse...</span>
+                    <input type="file" id="fileUpload"/>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="imageOutput" class="image-output">
+        <!-- This is where the images will be displayed -->
+    </div>
+
+    <h2>Text encoding/decoding</h2>
+    <table class="table">
+        <tr>
+            <td>Text to encode</td>
+            <td>
+                <input type="text" placeholder="Input text here" id="textToEncode" class="table-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="handleText" class="button">Go</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Garbled Text:</td>
+            <td><div id="garbledTextOutput" class="output"></div></td>
+        </tr>
+        <tr>
+            <td>Decoded Text:</td>
+            <td><div id="decodedTextOutput" class="output"></div></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
