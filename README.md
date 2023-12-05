@@ -46,7 +46,9 @@ Norint naudoti programa užtenka `ui.html` failą atidaryti naršyklėje.
 <img width="608" alt="image" src="https://github.com/kristupas-g/golay.js/assets/78504062/121e0eba-4664-4d21-8255-63d210dd8e86">
 
 Spauskite `Go`mygtuką 
+
 <img width="570" alt="image" src="https://github.com/kristupas-g/golay.js/assets/78504062/f8044962-23f6-4021-8c7a-de6b1a4f7209">
+
 Ekrane atsiras tekstas su klaidomis ir užkoduotas tekstas siųstas kanalu ir dekoduotas.
 
 
