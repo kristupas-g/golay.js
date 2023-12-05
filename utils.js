@@ -1,22 +1,34 @@
 const weight = vec => {
+    // Calculate the Hamming weight (number of non-zero elements) of a vector
     let vector = vec.isMatrx ? vec.elements : vec;
     return vector.reduce((count, element) => count + (element !== 0 ? 1 : 0), 0);
 };
 
-const makeArray = (length, value = 0) => Array(length).fill(value);
+const makeArray = (length, value = 0) => {
+    // Create an array of a specific length, filled with a specified value
+    return Array(length).fill(value);
+};
 
 const addVectors = (a, b) => {
+    // Add two vectors element-wise
     if (a.length !== b.length) {
         throw new Error('Vectors must have the same length');
     }
     return a.map((elem, index) => elem + b[index]);
 };
 
-const modTwo = vec => vec.map(x => x % 2);
+const modTwo = vec => {
+    // Apply modulo 2 to each element of a vector
+    return vec.map(x => x % 2);
+};
 
-const eyeVector = (size, n) => Array(size).fill(0).map((_, index) => index === n ? 1 : 0);
+const eyeVector = (size, n) => {
+    // Create a vector with all zeros and a single one at position n
+    return Array(size).fill(0).map((_, index) => index === n ? 1 : 0);
+};
 
 function introduceErrors(binaryVector, errorPercentage) {
+    // Introduce a specified percentage of errors into a binary vector
     const errorPositions = [];
     const vectorLength = binaryVector.length;
     const numberOfErrors = Math.round(vectorLength * (errorPercentage / 100));
@@ -24,6 +36,7 @@ function introduceErrors(binaryVector, errorPercentage) {
     for (let i = 0; i < numberOfErrors; i++) {
         let position;
         do {
+            // Generate a unique random position for each error
             position = Math.floor(Math.random() * vectorLength);
         } while (errorPositions.includes(position));
 
@@ -31,10 +44,11 @@ function introduceErrors(binaryVector, errorPercentage) {
         binaryVector[position] = binaryVector[position] === 1 ? 0 : 1;
     }
 
-    return [ errorPositions, binaryVector ];
+    return [errorPositions, binaryVector];
 }
 
 function stringToBits(str) {
+    // Convert a string to an array of bits
     const result = [];
     for (let i = 0; i < str.length; i++) {
         const binary = str.charCodeAt(i).toString(2);
@@ -44,7 +58,9 @@ function stringToBits(str) {
     }
     return result;
 }
+
 function bitsToString(bits) {
+    // Convert an array of bits back to a string
     let result = '';
     for (let i = 0; i < bits.length; i += 8) {
         let byte = bits.slice(i, i + 8);
