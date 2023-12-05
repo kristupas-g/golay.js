@@ -17,6 +17,12 @@ Norint naudoti programa užtenka `ui.html` failą atidaryti naršyklėje.
  - `utils.js`- pagalbinės funkcijos
  - `ui.html, styles.css ui.js handleImage.js handleText.js` - failai dirbantys su vartotojo sąsaja
 
+## Priimti programiniai sprendimai
+Jei įvestis ilgis nėra 12 kartotinis bus pridedema `n` 0 prie įvesties vektoriaus prieš užkoduojant. Dekodavus pridėti 0 yra pašalinami.
+
+## Eksperimentai
+Atlitki eksperimentai atlikt `unit test` pavidalu `test.js` faile.
+
 ## Naudojimo instrukcija
 1. Spausti `Random Input`, bus užplidyta atsitiktinai sugeneruotas vektorius kurį reikia užkoduoti. Vektorių galima redaguoti.
 <img width="576" alt="image" src="https://github.com/kristupas-g/golay.js/assets/78504062/51285f9d-19a7-4b9b-8b07-2ce1e53c610a">
