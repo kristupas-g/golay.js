@@ -11,11 +11,11 @@ Implementacija nenaudoja jokių bibliotekų
 Norint naudoti programa užtenka `ui.html` failą atidaryti naršyklėje.
 
 ## Programos failai
-`binaryMatrix.js`- klasė, skirta dirbti su dvejatainėmis matricomis
-`constants.js`- konstantinės matricos G, H, B
-`golayCode.js` - klasė kuri užkoduoja, dekoduoja dvejaitine matrica
-`utils.js`- pagalbinės funkcijos
-`ui.html, styles.css ui.js handleImage.js handleText.js` - failai dirbantys su vartotojo sąsaja
+ - `binaryMatrix.js`- klasė, skirta dirbti su dvejatainėmis matricomis
+ - `constants.js`- konstantinės matricos G, H, B
+ - `golayCode.js` - klasė kuri užkoduoja, dekoduoja dvejaitine matrica
+ - `utils.js`- pagalbinės funkcijos
+ - `ui.html, styles.css ui.js handleImage.js handleText.js` - failai dirbantys su vartotojo sąsaja
 
 ## Naudojimo instrukcija
 1. Spausti `Random Input`, bus užplidyta atsitiktinai sugeneruotas vektorius kurį reikia užkoduoti. Vektorių galima redaguoti.
