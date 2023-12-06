@@ -39,7 +39,8 @@ Tyrinėjama implementacijos našumas užkoduojant, dekoduojant skirtingo dydžio
 | ----- | ----- | ------- |
 | 72    | 1137  | 17763   |
 
-<img src="./experimentTabes/adjusted_encoding_times.png"/>
+![adjusted_encoding_times](https://github.com/kristupas-g/golay.js/assets/78504062/dde8c8d0-e7dc-47f0-90d3-ae45b7903197)
+
 
 #### Dekodavimas
 
@@ -50,7 +51,8 @@ Tyrinėjama implementacijos našumas užkoduojant, dekoduojant skirtingo dydžio
 | 6 | 65    | 642   | 8967    |
 | 9 | 62    | 663   | 9283    |
 
-<img src="./experimentTabes/adjusted_decoding_times.png"/>
+![adjusted_decoding_times](https://github.com/kristupas-g/golay.js/assets/78504062/f6f1d319-62d2-4f2b-87e5-a7588af78946)
+
 
 #### Išvados
 
