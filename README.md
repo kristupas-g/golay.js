@@ -33,13 +33,14 @@ Jei įvesties ilgis nėra 12 kartotinis, bus pridėta `n` 0 prie įvesties vekto
 
 Tyrinėjama implementacijos našumas užkoduojant ir dekoduojant skirtingo dydžio nuotraukas su skirtingomis tikimybėmis klaidai įvykti. X ašyje matome paveikslėlių rezoliuciją, o Y ašyje matome pasirinktą tikimybę įvykti klaidai. Visi duomenys pateikti milisekundėmis.
 
+Vizuolizuotus duomenis galima pažiūrėti skyriuje *Lentelės*
+
 #### Užkodavimas
 
 | 32x32 | 64x64 | 128x128 |
 | ----- | ----- | ------- |
 | 72    | 1137  | 17763   |
 
-![encoding graph](https://github.com/kristupas-g/golay.js/assets/78504062/dde8c8d0-e7dc-47f0-90d3-ae45b7903197)
 
 #### Dekodavimas
 
@@ -50,7 +51,6 @@ Tyrinėjama implementacijos našumas užkoduojant ir dekoduojant skirtingo dydž
 | 6 | 65    | 642   | 8967    |
 | 9 | 62    | 663   | 9283    |
 
-![deencoding graph](https://github.com/kristupas-g/golay.js/assets/78504062/f6f1d319-62d2-4f2b-87e5-a7588af78946)
 
 #### Išvados
 
@@ -94,4 +94,9 @@ Iš duomenų matome, kad padarytas klaidų kiekis neturi įtakos dekodavimo proc
 
 ## Literatūros sąrašas
 
-[Specifikacija](https://klevas.mif.vu.lt
+[Specifikacija](https://klevas.mif.vu.lt)
+
+## Lenteles 
+
+![encoding graph](https://github.com/kristupas-g/golay.js/assets/78504062/dde8c8d0-e7dc-47f0-90d3-ae45b7903197)
+![decoding graph](https://github.com/kristupas-g/golay.js/assets/78504062/f6f1d319-62d2-4f2b-87e5-a7588af78946)
