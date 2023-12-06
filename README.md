@@ -6,6 +6,9 @@
 
 Vektoriaus, teksto, nuotraukos užkodavimas, dekodavimas
 
+## Darbo valandos
+Implementacija su vartotojo sąsaja užtruko ~8 valandas
+
 ## Bibliotekos
 
 Implementacija nenaudoja jokių bibliotekų
