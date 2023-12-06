@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (textToEncode) {
             // Convert text to binary array
             let binaryArray = textToBinaryArray(textToEncode);
-            
             // Parse error percentage or default to 0
             let errorPercentage = parseFloat(errorPercentageInput.value) || 0;
 
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Encode, introduce errors, decode, and display decoded text
             let [encodedArray, padding] = GolayCode.encodeAnySize(binaryArray);
-            let [__, encodedArrayWithError] = introduceErrors(encodedArray.slice(), errorPercentage);
+            let [errorPositions, encodedArrayWithError] = introduceErrors(encodedArray.slice(), errorPercentage);
             let decodedArray = GolayCode.decodeAnySize(encodedArrayWithError, padding);
             
             let decodedText = binaryArrayToText(decodedArray);
@@ -33,17 +32,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function textToBinaryArray(text) {
-    // Convert text to an array of binary values
-    return text.split('').flatMap(char => 
-        char.charCodeAt(0).toString(2).padStart(8, '0').split('').map(Number)
-    );
+    return text.split('').map(char => 
+        char.charCodeAt(0).toString(2).padStart(8, '0')
+    ).join('').split('').map(bit => parseInt(bit));
 }
 
-function binaryArrayToText(binaryArray) {
-    // Convert a binary array back to text
-    let binaryStr = binaryArray.join('');
-    return binaryStr.match(/.{1,8}/g).map(byte => 
-        String.fromCharCode(parseInt(byte, 2))
-    ).join('');
+function binaryArrayToText(bits) {
+    return bits
+        .join('')
+        .match(/.{1,8}/g)
+        .map(byte => String.fromCharCode(parseInt(byte, 2)))
+        .join('');
 }
 

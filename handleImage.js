@@ -76,25 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function introduceErrorsForImage(binaryVector, errorPercentage) {
-        // Introduce errors into the binary vector based on a percentage
-        const pixelDataOffset = 432; // Offset for pixel data in BMP format
-        const pixelDataLength = binaryVector.length - pixelDataOffset;
-        const numberOfErrors = Math.round(pixelDataLength * (errorPercentage / 100));
-        
-        // Randomly select positions to introduce errors
-        const indices = Array.from({ length: pixelDataLength }, (_, i) => i + pixelDataOffset);
-        
-        // Shuffle indices
-        for (let i = indices.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [indices[i], indices[j]] = [indices[j], indices[i]];
-        }
-        
-        // Introduce errors
-        for (let i = 0; i < numberOfErrors; i++) {
-            binaryVector[indices[i]] ^= 1;
-        }
-    
-        return binaryVector;
+        const offset = 432;
+        const vectorLength = binaryVector.length;
+
+        const preservedBits = binaryVector.slice(0, offset);
+        const tempVector = binaryVector.slice(offset);
+
+        const [_, modifiedTempVector] = introduceErrors(tempVector, errorPercentage);
+
+        return preservedBits.concat(modifiedTempVector);
     }
 });

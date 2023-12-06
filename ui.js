@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Set logger for GolayCode to log to screen
-  GolayCode.setLogger(logToScreen);
+  // GolayCode.setLogger(logToScreen);
   // Uncomment the below line to disable logging
-  // GolayCode.setLogger(null);
+  GolayCode.setLogger(null);
 });
 
 const logToScreen = (...args) => {

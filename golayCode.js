@@ -1,5 +1,6 @@
 class GolayCode {
     static encodeAnySize(vec) {
+        const t0 = performance.now();
         // Encode a vector of any size using Golay code
         let padding = 0;
         // Pad the vector to a multiple of 12
@@ -15,17 +16,21 @@ class GolayCode {
             encodedVec = encodedVec.concat(GolayCode.encode(chunk));
         }
 
+        const t1 = performance.now();
+
+        console.log('Encoding time: ' , t1 - t0 , ' ms')
+
         return [encodedVec, padding];
     }
 
     static decodeAnySize(encodedVec, padding) {
+        const t0 = performance.now();
         // Decode a vector of any size encoded with Golay code
         let decodedVec = [];
         // Decode each 24-bit chunk
         for (let i = 0; i < encodedVec.length; i += 24) {
             const chunk = encodedVec.slice(i, i + 24);
             const decodedChunk = GolayCode.decode(chunk).slice(0, 12);
-            console.log(chunk.join(''), decodedChunk.join(''))
             decodedVec = decodedVec.concat(decodedChunk);
         }
         
@@ -33,6 +38,10 @@ class GolayCode {
         if (padding > 0) {
             decodedVec = decodedVec.slice(0, -padding);
         }
+
+        const t1 = performance.now();
+
+        console.log('Decoding time: ' , t1 - t0 , ' ms')
 
         return decodedVec;
     }
@@ -98,7 +107,7 @@ class GolayCode {
 
         // If no solution is found, log and return empty array
         GolayCode.Log('Data too corrupted, no solution');
-        return [];
+        return vec;
     }
 
     static Log(...args) {
